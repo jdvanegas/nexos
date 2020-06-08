@@ -1,0 +1,41 @@
+<div class="row mt-5 fadeIn">
+    <div class="col-md-6 mx-auto">
+        <mat-card>
+            <h1 class="mat-h1">Crear doctor</h1>
+            <mat-divider></mat-divider>
+            <form [formGroup]="createDoctorForm" (ngSubmit)="createDoctor()" class="nx-form mt-5">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="nx-full-width">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput placeholder="Ex. Jhon" formControlName="name">
+                            <mat-error *ngIf="control('name').invalid && control('name').touched">Este campo es requerido</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="nx-full-width">
+                            <mat-label>Numero de credencial</mat-label>
+                            <input matInput placeholder="Ex. 95876314" formControlName="credentialNumber">
+                            <mat-error *ngIf="control('credentialNumber').invalid && control('credentialNumber').touched">Este campo es requerido</mat-error>
+                        </mat-form-field>  
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="nx-full-width">
+                            <mat-label>Apellido</mat-label>
+                            <input matInput placeholder="Ex. Doe" formControlName="lastName">
+                            <mat-error *ngIf="control('lastName').invalid && control('lastName').touched">Este campo es requerido</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="nx-full-width">
+                            <mat-label>Hospital</mat-label>
+                            <mat-select formControlName="hospital">
+                                <mat-option *ngFor="let hospital of hospitalList" [value]="hospital.id">
+                                    {{hospital.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="control('hospital').invalid && control('hospital').touched">Este campo es requerido</mat-error>
+                        </mat-form-field>                          
+                    </div>
+                </div>    
+                <button type="submit" mat-raised-button color="primary">Crear</button>      
+            </form>
+        </mat-card>
+    </div>
+</div>

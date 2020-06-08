@@ -1,0 +1,42 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.right-menu{
+    display: flex;
+    list-style: none;  
+    height: 100%;
+    margin: 0; 
+    li {
+        display: flex;
+        align-items: center;
+        a{
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            font-size: 1rem;
+            padding: 0 1rem;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.08);
+            }
+            &:active{
+              background-color: rgba(0, 0, 0, 0.15);
+            }
+        }
+        .active-link {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .right-menu{
+        padding: 0;
+        padding-left: .5rem;
+    }
+}

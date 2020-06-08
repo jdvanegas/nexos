@@ -1,0 +1,31 @@
+<div class="row mt-5 fadeIn">
+  <div class="col">
+    <a mat-raised-button color='primary' routerLink="./crear">Agregar</a>
+  </div>
+</div>
+<div class="row mt-3 fadeIn">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-light">
+            <tr class="text-left">
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Número de credencial</th>
+              <th scope="col">Hospital</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doctor of doctorsList">
+              <td>{{doctor.id}}</td>
+              <td>{{doctor.name}}</td>
+              <td>{{doctor.lastName}}</td>
+              <td>{{doctor.credentialNumber}}</td>
+              <td>{{doctor.hospital.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

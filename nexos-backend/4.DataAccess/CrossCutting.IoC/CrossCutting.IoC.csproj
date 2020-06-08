@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SimpleInjector" Version="4.10.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.Application\Application\Application.csproj" />
+    <ProjectReference Include="..\..\3.Domain\Domain.EntityMapper\Domain.EntityMapper.csproj" />
+    <ProjectReference Include="..\DataAccess.Nexos\DataAccess.Nexos.csproj" />
+  </ItemGroup>
+</Project>
